@@ -82,7 +82,7 @@ const LuckySpinerPage = () => {
           <p className="my-5">
             Silahkan claim hadiah anda di livechat kami!
           </p>
-          <Link href="https://kingmahkota.homes/" target="_blank">
+          <Link href="https://panglimaqq.bio/" target="_blank">
             <Button size="lg" className=" bg-gradient-to-tr from-[#08e1ae] to-[#98de5b] text-neutral-800 font-bold text-xl">
               Click here!
             </Button>

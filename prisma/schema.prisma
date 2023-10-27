@@ -1,0 +1,56 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @unique @default(cuid())
+  username String @unique
+  password String
+}
+
+model LuckySpiner {
+  id String @id @unique @default(cuid())
+  memberId String
+  codeVoucher String
+  canExpired Boolean
+  expiredDate DateTime?
+  used Boolean
+  priceId String?
+  price LuckySpinerOption? @relation(fields: [priceId], references: [id])
+  
+}
+
+model LuckySpinerOption {
+  id String @id @unique @default(cuid())
+  option String
+  color String
+  probability Int @default(0)
+  forceWin Boolean @default(false)
+  luckySpiner LuckySpiner[]
+}
+
+model Misteribox {
+  id String @id @unique @default(cuid())
+  memberId String
+  codeVoucher String
+  canExpired Boolean
+  expiredDate DateTime?
+  used Boolean
+  priceId String?
+  price MisteriboxOption? @relation(fields: [priceId], references: [id])
+}
+
+model MisteriboxOption {
+  id String @id @unique @default(cuid())
+  option String
+  category String
+  misterBox Misteribox[]
+}

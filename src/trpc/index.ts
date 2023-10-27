@@ -1,10 +1,9 @@
 import { db } from "@/db";
 import { privateProcedure, publicProcedure, router } from "./trpc";
 import { z } from "zod";
-import { TRPCError } from "@trpc/server";
 import bcrypt from "bcrypt";
-import { gameOption } from "@/app/(game)/misteribox/page";
 import { TSpinerOption } from "@/lib/type/tspiner";
+import { gameOption } from "@/lib/type/tmisteri";
 
 export const appRouter = router({
   // register: publicProcedure

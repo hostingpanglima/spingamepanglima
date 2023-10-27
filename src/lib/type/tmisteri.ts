@@ -14,3 +14,12 @@ export type TMisteriOption = {
   option: string
   category: string
 }
+export type gameOption = {
+  id: string
+  category: string
+  option: string
+  x: number
+  y: number
+  c: number
+  open: boolean
+}
